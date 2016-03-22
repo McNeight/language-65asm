@@ -1,0 +1,107 @@
+'fileTypes': []
+'name': '65xx Assembly (Generic)'
+'patterns': [
+  {
+    'begin': '(;)'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.definition.comment'
+    'end': '\\n'
+    'name': 'comment.line.semicolon'
+  }
+  {
+    'include': '#MCS6502'
+  }
+  {
+    'include': '#MCS6502A'
+  }
+  {
+    'include': '#WDC65C02'
+  }
+  {
+    'include': '#R65C02'
+  }
+  {
+    'include': '#WDC65C02S'
+  }
+  {
+    'include': '#WDC65816'
+  }
+  {
+    'include': '#WDC65816A'
+  }
+  {
+    'include': '#WDC65816L'
+  }
+  {
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end'
+    'name': 'string.quoted.double.asm.65xx'
+  }
+  {
+    'match': '(?i:(0b|%)[01]+)'
+    'name': 'constant.numeric.binary.asm.65xx'
+  }
+  {
+    'match': '@([0-7]+)\\b'
+    'name': 'constant.numeric.octal.asm.65xx'
+  }
+  {
+    'match': '\\b\\d+\\b'
+    'name': 'constant.numeric.decimal.asm.65xx'
+  }
+  {
+    'match': '(?i:(0x|\\$)[\\da-f]+)'
+    'name': 'constant.numeric.hexadecimal.asm.65xx'
+  }
+  {
+    'match': '!|&|&&|\\^|\\*|\\/|\\-|\\+|~|=|<=|>=|<<|>>|<>|<|>|\\||\\|\\|'
+    'name': 'keyword.operator.asm.65xx'
+  }
+]
+'repository':
+  'MCS6502':
+    'comment': 'NMOS 6502/6510 Opcodes'
+    'match': '\\b(?i:adc|and|asl|bc[cs]|beq|bit|bmi|bne|bpl|brk|bv[cs]|cl[cdiv]|cmp|cp[xy]|de[cxy]|eor|in[cxy]|jmp|jsr|ld[axy]|lsr|nop|ora|ph[ap]|pl[ap]|rol|ror|rt[is]|sbc|sec|sed|sei|st[axy]|ta[xy]|tsx|tx[as]|tya)\\b'
+    'name': 'keyword.mnemonic.asm.65xx.MCS6502'
+  'MCS6502A':
+    'comment': 'NMOS 6502/6510 Opcode Aliases'
+    'match': '\\b(?i:blt|bge|cpa|dea|ina)\\b'
+    'name': 'keyword.mnemonic.asm.65xx.MOS6502A'
+  'WDC65C02':
+    'comment': 'WDC CMOS 65C02 Opcode Additions'
+    'match': '\\b(?i:bra|ph[xy]|pl[xy]|stz|t[rs]b)\\b'
+    'name': 'keyword.mnemonic.asm.65xx.WDC65C02'
+  'R65C02':
+    # R65C02 instructions,
+    # Rockwell added a few instructions in the static# CMOS version of the 6502,
+    # but removed the undocumented / illegal opcodes.#
+    'comment': 'Rockwell CMOS R65C02 Opcode Additions'
+    'match': '\\b(?i:bb[rs][0-7]|[rs]mb[0-7])\\b'
+    'name': 'keyword.mnemonic.asm.65xx.R65C02'
+  'WDC65C02S':
+    # WDC65C02 instructions,
+    # WDC added a few(much needed) instructions in the# CMOS version of the 6502,
+    # but removed the undocumented / illegal opcodes.#
+    'comment': 'WDC Static CMOS 65C02S Opcode Additions'
+    'match': '\\b(?i:stp|wai)\\b'
+    'name': 'keyword.mnemonic.asm.65xx.WDC65C02S'
+  'WDC65816':
+    'comment': 'WDC 65816 Opcodes.'
+    'match': '\\b(?i:brl|cop|j[ms]l|mv[np]|pe[air]|ph[bdk]|pl[bd]|rep|rtl|sep|swa|tad|tc[ds]|td[ac]|ts[ac]|txy|tyx|wdm|xba|xce)\\b'
+    'name': 'keyword.mnemonic.asm.65xx.WDC65816'
+  'WDC65816A':
+    'comment': 'WDC 65816 Opcode Aliases'
+    'match': '\\b(?i:swa|ta[ds]|t[ds]a)\\b'
+    'name': 'keyword.mnemonic.asm.65xx.WDC65816A'
+  'WDC65816L':
+    'comment': 'WDC 65816 Long Opcode Aliases'
+    'match': '\\b(?i:adcl|andl|cmpl|eorl|ldal|oral|sbcl|stal)\\b'
+    'name': 'keyword.mnemonic.asm.65xx.WDC65816L'
+'scopeName': 'source.asm.65xx.generic'
