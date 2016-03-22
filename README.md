@@ -14,7 +14,8 @@ Adds syntax highlighting to 65816/65C816/65802/6502/65C02 files in Atom, with ex
 Originally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle)
 from the various other TextMate bundles:
 
- - [6502asm-tmbundle](https://github.com/adamv/6502asm-tmbundle)
+ - [6502asm-sublime](https://github.com/jtfmumm/6502asm-sublime)
+ - [6502asm-tmbundle](https://github.com/vanderhoorn/6502asm-tmbundle)
  - [65816.tmbundle](https://github.com/ksherlock/65816.tmbundle)
 
 Contributions are greatly appreciated! Please fork this repository and open a
